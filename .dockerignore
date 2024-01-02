@@ -1,0 +1,11 @@
+node_modules/
+default-*.json
+default-env.json
+.env
+.git/
+.github/
+.yo-rc.json
+.vscode/
+.DS_Store
+scripts.thunder/
+*.s9pk
