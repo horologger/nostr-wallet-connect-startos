@@ -103,7 +103,7 @@ interfaces:
     # A human readable name for display in the UI
     name: User Interface
     # A descriptive description of what the interface does
-    description: A simple user interface that is expected to display the text "Hello Word"
+    description: Create connections with Nostr Wallet Connect
     tor-config:
     # Port mappings are from the external port to the internal container port
       port-mapping:
