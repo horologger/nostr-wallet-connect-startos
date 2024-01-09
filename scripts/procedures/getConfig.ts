@@ -36,12 +36,11 @@ export const getConfig: T.ExpectedExports.getConfig = compat.getConfig({
     "implementation": {
       "type": "enum",
       "name": "Lightning Implementation",
-      "description": "The underlying Lightning implementation, currently LND or Core Lightning (CLN)",
+      "description": "The underlying Lightning implementation, currently only LND is supported",
       "warning": "If you change the LN implementation after using Nostr Wallet Connect this will delete all NWC connections related to the previously configured!",
-      "values": ["LndRestWallet", "CLightningWallet"],
+      "values": ["LndRestWallet"],
       'value-names': {
         "LndRestWallet": "LND",
-        "CLightningWallet": "Core Lightning (coming soon)",
       },
       "default": "LndRestWallet",
     }

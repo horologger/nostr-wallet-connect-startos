@@ -17,7 +17,7 @@ upstream-repo: "https://github.com/getAlby/nostr-wallet-connect"
 # URL to the support site / channel for the project. This key can be omitted if none exists, or it can link to the original project repository issues.
 support-site: "https://github.com/getAlby/nostr-wallet-connect/issues"
 # URL to the marketing site for the project. This key can be omitted if none exists, or it can link to the original project repository. 
-marketing-site: "https://getalby.com/?utm_source=nwc"
+marketing-site: "https://nwc.getalby.com/about"
 # The series of commands to build the project into an s9pk for arm64/v8. In this case we are using a Makefile with the simple build command "make".
 build: ["make"]
 # Human readable descriptors for the service. These are used throughout the StartOS user interface, primarily in the marketplace.
@@ -26,7 +26,7 @@ description:
   short: Nostr Wallet Connect
   # This description will display with additional details in the service's individual marketplace page
   long: |
-    Nostr Wallet Connect (NWC) is a way for applications like Nostr clients to access a remote Lightning wallet through a standardized protocol. For instance, you can link your Alby account with any other application using this feature.
+    Send and receive payments in apps in a non-custodial way. Nostr Wallet Connect (NWC) is a secure and unified way for wallets to connect to applications through a standardized protocol. E.g. you can connect your Start9 or Alby wallet with any app using this feature.
 # These assets are static files necessary for packaging the service for Start9 (into an s9pk). Each value is a path to the specified asset. If an asset is missing from this list, or otherwise denoted, it will be defaulted to the values denoted below. 
 assets:
   # Default = LICENSE.md
@@ -65,7 +65,7 @@ main:
     # Specifies where on the service's file system its persistence directory should be mounted prior to service startup
     main: /data
     lnd: /mnt/lnd
-    c-lightning: "/mnt/c-lightning"
+    # c-lightning: "/mnt/c-lightning"
 # This is where health checks would be defined - see a more advanced example in https://github.com/Start9Labs/start-pages-wrapper
 health-checks: {}
 # config: ~
@@ -89,12 +89,12 @@ volumes:
     volume-id: main
     path: /public
     readonly: true
-  c-lightning:
-    type: pointer
-    package-id: c-lightning
-    volume-id: main
-    path: /shared
-    readonly: true
+  # c-lightning:
+  #   type: pointer
+  #   package-id: c-lightning
+  #   volume-id: main
+  #   path: /shared
+  #   readonly: true
 
 # This specifies how to configure the port mapping for exposing the service over TOR and LAN (if applicable). Many interfaces can be specified depending on the needs of the service. If it can be launched over a Local Area Network connection, specify a `lan-config`. Otherwise, at minimum, a `tor-config` must be specified.
 interfaces:
@@ -124,16 +124,17 @@ dependencies:
     version: ">=0.16.0 <0.18.0"
     description: Nostr Wallet Connect works with your LND
     requirement:
-      type: "opt-in"
+    #  type: "opt-in"
+      type: "required"
       how: Use the LND instance by default
     config: ~
-  c-lightning:
-    version: ">=0.10.1 <24.0.0"
-    description: Used to communicate with the Lightning Network.
-    requirement:
-      type: "opt-in"
-      how: Can opt to use the CLN instance instead of LND
-    config: ~
+  # c-lightning:
+  #   version: ">=0.10.1 <24.0.0"
+  #   description: Used to communicate with the Lightning Network.
+  #   requirement:
+  #     type: "opt-in"
+  #     how: Can opt to use the CLN instance instead of LND
+  #   config: ~
 # Specifies how backups should be run for this service. The default StartOS provided option is to use the duplicity backup library on a system image (compat)
 backup:
   create:

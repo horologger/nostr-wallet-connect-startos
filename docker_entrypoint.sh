@@ -8,8 +8,8 @@
 #export CLIENT_NOSTR_PUBKEY='blah' #if set, this service will only listen to events authored by this public key. You can set this to your own nostr public key.
 
 #export RELAY='blah' #default='blah' #"wss://relay.getalby.com/v1"
-#export RELAY="wss://relay.getalby.com/v1"
-export RELAY="wss://atl.purplerelay.com"
+export RELAY="wss://relay.getalby.com/v1"
+#export RELAY="wss://atl.purplerelay.com"
 
 #export PUBLIC_RELAY='blah' #optional relay URL to be used in connection strings if RELAY is an internal URL
 export LN_BACKEND_TYPE="LND"            #ALBY or LND
