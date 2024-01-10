@@ -10,6 +10,7 @@ docker buildx build --platform linux/arm64,linux/amd64 --tag horologger/nostr-wa
 
 
 docker buildx build --platform linux/arm64 --tag horologger/nostr-wallet-connect:v0.4.1 --load .
+docker buildx build --platform linux/amd64 --tag horologger/nostr-wallet-connect:v0.4.1 --load .
 
 docker buildx build --platform linux/arm64 --tag horologger/nostr-wallet-connect-startos:v0.4.1 --load .
 

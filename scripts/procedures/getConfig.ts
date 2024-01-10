@@ -32,16 +32,5 @@ export const getConfig: T.ExpectedExports.getConfig = compat.getConfig({
         "description": "The Nostr Relay to use for Nostr Wallet Connect connections",
         "copyable": true,
         "nullable": false,    
-    },
-    "implementation": {
-      "type": "enum",
-      "name": "Lightning Implementation",
-      "description": "The underlying Lightning implementation, currently only LND is supported",
-      "warning": "If you change the LN implementation after using Nostr Wallet Connect this will delete all NWC connections related to the previously configured!",
-      "values": ["LndRestWallet"],
-      'value-names': {
-        "LndRestWallet": "LND",
-      },
-      "default": "LndRestWallet",
     }
   });
