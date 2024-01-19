@@ -6,13 +6,13 @@ docker buildx create --use
 ```
 
 ```sh
-docker buildx build --platform linux/arm64,linux/amd64 --tag horologger/nostr-wallet-connect:v0.4.1 --output "type=registry" .
+docker buildx build --platform linux/arm64,linux/amd64 --tag horologger/nostr-wallet-connect:v0.4.2 --output "type=registry" .
 
 
-docker buildx build --platform linux/arm64 --tag horologger/nostr-wallet-connect:v0.4.1 --load .
-docker buildx build --platform linux/amd64 --tag horologger/nostr-wallet-connect:v0.4.1 --load .
+docker buildx build --platform linux/arm64 --tag horologger/nostr-wallet-connect:v0.4.2 --load .
+docker buildx build --platform linux/amd64 --tag horologger/nostr-wallet-connect:v0.4.2 --load .
 
-docker buildx build --platform linux/arm64 --tag horologger/nostr-wallet-connect-startos:v0.4.1 --load .
+docker buildx build --platform linux/arm64 --tag horologger/nostr-wallet-connect-startos:v0.4.2 --load .
 
 ```
 
@@ -43,7 +43,7 @@ sudo ./umbrel/scripts/app restart isviable-timeintocrypto
 On Zilla
 ```sh
 su - alunde
-docker pull horologger/nostr-wallet-connect:v0.4.1
+docker pull horologger/nostr-wallet-connect:v0.4.2
 mkdir -p ~/.timeintocrypto/data
 ```
 First run
@@ -53,13 +53,13 @@ docker run \
 -v data:/data \
 -p 21284:21284 \
 --name timeintocrypto \
--it horologger/nostr-wallet-connect:v0.4.1 
+-it horologger/nostr-wallet-connect:v0.4.2 
 ```
 
 On Ragnar
 ```sh
 su - alunde
-docker pull horologger/nostr-wallet-connect:v0.4.1
+docker pull horologger/nostr-wallet-connect:v0.4.2
 mkdir -p ~/.timeintocrypto/data
 ```
 First run
@@ -75,7 +75,7 @@ docker run \
 -v /t4/lnd:/lnd:ro \
 -p 8080:8080 \
 --name nwc \
--it horologger/nostr-wallet-connect:v0.4.1 
+-it horologger/nostr-wallet-connect:v0.4.2 
 ```
 Subsequent runs
 ```sh
@@ -90,7 +90,7 @@ docker run \
 -v /lnd-data:/lnd:ro \
 -p 8080:8080 \
 --name nwc \
--it horologger/nostr-wallet-connect:v0.4.1 
+-it horologger/nostr-wallet-connect:v0.4.2 
 
 docker run \
 -e LN_BACKEND_TYPE="LND" \
@@ -103,7 +103,7 @@ docker run \
 -v lnd-data:/lnd:ro \
 -p 8080:8080 \
 --name nwc \
--it horologger/nostr-wallet-connect:v0.4.1 
+-it horologger/nostr-wallet-connect:v0.4.2 
 
 ```
 Inspect
