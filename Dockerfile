@@ -1,6 +1,6 @@
 FROM golang:1.20-alpine as builder
 LABEL maintainer="andrewlunde <andrew.lunde@sap.com>"
-FROM horologger/nostr-wallet-connect:v0.4.1
+FROM ghcr.io/getalby/nostr-wallet-connect:0.4.2
 
 # Move to working directory /build
 WORKDIR /build
