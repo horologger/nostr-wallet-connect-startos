@@ -67,7 +67,11 @@ main:
     main: /data
     lnd: /mnt/lnd
 # This is where health checks would be defined - see a more advanced example in https://github.com/Start9Labs/start-pages-wrapper
-health-checks: {}
+health-checks:
+  web-ui:
+    name: Web UI
+    success-message: Nostr Wallet Connect UI is ready
+    type: script
 # config: ~
 config:
   get:
