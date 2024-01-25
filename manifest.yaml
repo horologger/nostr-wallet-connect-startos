@@ -17,7 +17,8 @@ upstream-repo: "https://github.com/getAlby/nostr-wallet-connect"
 # URL to the support site / channel for the project. This key can be omitted if none exists, or it can link to the original project repository issues.
 support-site: "https://github.com/getAlby/nostr-wallet-connect/issues"
 # URL to the marketing site for the project. This key can be omitted if none exists, or it can link to the original project repository. 
-marketing-site: "https://nwc.getalby.com/about"
+#marketing-site: "https://nwc.getalby.com/about"
+marketing-site: "https://nwc.dev/"
 # The series of commands to build the project into an s9pk for arm64/v8. In this case we are using a Makefile with the simple build command "make".
 build: ["make"]
 # Human readable descriptors for the service. These are used throughout the StartOS user interface, primarily in the marketplace.
