@@ -15,6 +15,6 @@
 
 ## Getting Help
 
-For more information, see the [Alby Nostr Wallet Connect](https://nwc.getalby.com/about).
+For more information, see the [Alby Nostr Wallet Connect](https://nwc.dev/).
 
 You can also ask for assistance in the [Start9 community chats](https://start9.com/contact).
