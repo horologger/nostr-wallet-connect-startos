@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # https://nwc.getalby.com/public/images/nwc-logo.svg
 

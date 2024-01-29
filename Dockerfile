@@ -1,26 +1,8 @@
-FROM golang:1.20-alpine as builder
-LABEL maintainer="andrewlunde <andrew.lunde@sap.com>"
 FROM ghcr.io/getalby/nostr-wallet-connect:0.4.2
-
-# Move to working directory /build
-WORKDIR /build
-
-# Copy the code into the container
-COPY . .
-
-RUN apk update
-RUN apk add --no-cache bash
-RUN apk add yq xxd curl jq
-
-# Start a new, final image to reduce size.
-#FROM alpine as final
-
-EXPOSE 8080
+LABEL maintainer="andrewlunde <andrew.lunde@sap.com>"
 
 # Start9 Packaging
-RUN rm -f /docker_entrypoint.sh
-ADD ./docker_entrypoint.sh /bin/docker_entrypoint.sh
-RUN chmod a+x /bin/docker_entrypoint.sh
+RUN apk add --no-cache yq; \
+    rm -f /var/cache/apk/*
 
-# Run docker_entrypoint.sh
-ENTRYPOINT ["/bin/docker_entrypoint.sh"]
+COPY --chmod=755 docker_entrypoint.sh /usr/local/bin/
