@@ -1,18 +1,17 @@
-
 id: nostr-wallet-connect
 title: Nostr Wallet Connect
 version: 0.4.2
 release-notes: Nostr Wallet Connect 0.4.2
-license:  Apache-2.0
+license: Apache-2.0
 wrapper-repo: "https://github.com/horologger/nostr-wallet-connect-startos"
 upstream-repo: "https://github.com/getAlby/nostr-wallet-connect"
 support-site: "https://github.com/getAlby/nostr-wallet-connect/issues"
 marketing-site: "https://nwc.dev/"
 build: ["make"]
 description:
-  short: Nostr Wallet Connect
+  short: An open protocol for connecting lightning wallets to apps
   long: |
-    Send and receive payments in apps in a non-custodial way. Nostr Wallet Connect (NWC) is a secure and unified way for wallets to connect to applications through a standardized protocol. E.g. you can connect your Start9 or Alby wallet with any app using this feature.
+    NWC allows for sustained interaction between Bitcoin lightning wallets and apps. Once an app connection is created, the app can request payments through a Nostr relay.
 assets:
   license: LICENSE
   icon: nwc-logo.png
@@ -36,7 +35,7 @@ config:
   set:
     type: script
 properties: ~
-environment: ~ 
+environment: ~
 volumes:
   main:
     type: data
@@ -73,15 +72,15 @@ backup:
   create:
     type: docker
     image: compat
-    system: true 
-    entrypoint: compat 
+    system: true
+    entrypoint: compat
     args:
       - duplicity
       - create
       - /mnt/backup
       - /root/data
     mounts:
-      BACKUP: "/mnt/backup" 
+      BACKUP: "/mnt/backup"
       main: "/root/data"
   restore:
     type: docker
