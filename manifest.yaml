@@ -1,7 +1,7 @@
 id: nostr-wallet-connect
 title: Nostr Wallet Connect
-version: 0.4.2
-release-notes: Nostr Wallet Connect 0.4.2
+version: 0.4.2.1
+release-notes: Implemented LND 0.18 compatibility 
 license: Apache-2.0
 wrapper-repo: "https://github.com/horologger/nostr-wallet-connect-startos"
 upstream-repo: "https://github.com/getAlby/nostr-wallet-connect"
@@ -62,7 +62,7 @@ interfaces:
       - http
 dependencies:
   lnd:
-    version: ">=0.16.0 <0.18.0"
+    version: ">=0.16.0 <0.19.0"
     description: Nostr Wallet Connect works with your LND
     requirement:
       type: "required"
